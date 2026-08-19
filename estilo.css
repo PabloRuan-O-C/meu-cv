@@ -319,3 +319,53 @@ body:not(.modo-claro) .btn-pdf {
 .btn-linkedin {
   color: #0a66c2;
 }
+/* --- ADAPTAÇÃO PARA CELULARES (MOBILE RESPONSIVO) --- */
+@media (max-width: 768px) {
+  /* Layout principal empilhado em 1 coluna */
+  .container-principal {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* Coluna Lateral ajustada */
+  .coluna-esquerda {
+    width: 100%;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .secao-contato p {
+    justify-content: center; /* Centraliza contatos no mobile */
+  }
+
+  /* Coluna de Conteúdo ajustada */
+  .coluna-direita {
+    padding: 20px 15px;
+  }
+
+  /* Menu de Navegação em celular */
+  .menu-navegacao {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu-navegacao a {
+    font-size: 0.85rem;
+  }
+
+  /* Botões do Topo */
+  .topo-direita {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .btn-pdf {
+    width: 100%; /* Botão fácil de tocar na tela do celular */
+    text-align: center;
+  }
+}
