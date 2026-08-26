@@ -10,9 +10,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="estilo.css" />
   </head>
   <body>
+    <!-- Botão de Alternar Idioma -->
+    <button
+      id="btn-idioma"
+      class="btn-acao btn-idioma"
+      title="Mudar para Inglês"
+    >
+      <i class="fa-solid fa-globe"></i> <span id="label-idioma">EN</span>
+    </button>
+
     <!-- Botão de Alternar Tema -->
     <button id="btn-tema" class="btn-acao btn-tema" title="Alternar Tema">
       <i class="fa-solid fa-moon"></i>
@@ -28,24 +36,32 @@
         </div>
 
         <h1>Pablo Ruan Oliveira Chagas</h1>
-        <p class="profissao">Estudante de Sistema de informmação</p>
+        <p class="profissao" data-i18n="profissao">
+          Estudante de Sistemas de Informação
+        </p>
 
         <div class="secao-contato">
-          <h2>Contato</h2>
+          <h2 data-i18n="titulo-contato">Contato</h2>
           <p>
-            <b>Email:</b>
+            <b data-i18n="label-email">Email:</b>
             <span id="email-texto">pablo.ruan.oliveira.c@gmail.com</span>
             <button
               id="btn-copiar"
               class="btn-interativo"
               title="Copiar E-mail"
+              data-i18n-title="tooltip-copiar"
             >
               <i class="fa-regular fa-copy"></i>
             </button>
-            <span id="aviso-copiado" class="aviso-oculto">Copiado!</span>
+            <span
+              id="aviso-copiado"
+              class="aviso-oculto"
+              data-i18n="aviso-copiado"
+              >Copiado!</span
+            >
           </p>
           <p>
-            <b>Telefone:</b> (35) 91001-7885
+            <b data-i18n="label-telefone">Telefone:</b> (35) 91001-7885
             <a
               href="https://wa.me/5535910017885"
               target="_blank"
@@ -76,7 +92,7 @@
           </p>
 
           <p>
-            <b>LinkedIn: </b>Pablo Ruan Oliveira Chagas
+            <b>LinkedIn: </b>Pablo Ruan
             <a
               href="https://www.linkedin.com/in/pablo-ruan-oliveira-chagas-43348a42b"
               target="_blank"
@@ -86,12 +102,15 @@
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </p>
-          <p><b>Cidade:</b> Machado - MG</p>
+          <p>
+            <b data-i18n="label-cidade">Cidade:</b>
+            <span data-i18n="val-cidade">Machado - MG</span>
+          </p>
         </div>
 
         <div class="secao-sobre">
-          <h2>Sobre Mim</h2>
-          <p>
+          <h2 data-i18n="titulo-sobre">Sobre Mim</h2>
+          <p data-i18n="texto-sobre">
             Estudante de graduação no IFSULDEMINAS - Campus Machado. Focado em
             desenvolvimento web Front-End e evolução constante em programação.
           </p>
@@ -100,25 +119,26 @@
 
       <!-- COLUNA DIREITA (MAIN) -->
       <main class="coluna-direita">
-        <!-- MENU DE NAVEGAÇÃO (REQUISITO OBRIGATÓRIO DO DOC) -->
+        <!-- MENU DE NAVEGAÇÃO -->
         <nav class="menu-navegacao">
-          <a href="#objetivo">Objetivo</a>
-          <a href="#formacao">Formação</a>
-          <a href="#experiencia">Projetos</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#outros">Outros</a>
+          <a href="#objetivo" data-i18n="menu-objetivo">Objetivo</a>
+          <a href="#formacao" data-i18n="menu-formacao">Formação</a>
+          <a href="#experiencia" data-i18n="menu-projetos">Projetos</a>
+          <a href="#habilidades" data-i18n="menu-habilidades">Habilidades</a>
+          <a href="#outros" data-i18n="menu-outros">Outros</a>
         </nav>
 
         <div class="topo-direita">
           <button onclick="window.print()" class="btn-acao btn-pdf">
-            <i class="fa-solid fa-file-pdf"></i> Baixar PDF
+            <i class="fa-solid fa-file-pdf"></i>
+            <span data-i18n="btn-pdf">Baixar PDF</span>
           </button>
         </div>
 
         <!-- 2. Objetivo -->
         <section id="objetivo" class="bloco-conteudo">
-          <h2>Objetivo Profissional</h2>
-          <p>
+          <h2 data-i18n="titulo-objetivo">Objetivo Profissional</h2>
+          <p data-i18n="texto-objetivo">
             Estudante no 4º período com foco em desenvolvimento Web e Engenharia
             de Software. Busco oportunidades de estágio para aplicar
             conhecimentos em projetos práticos e evoluir na área de tecnologia.
@@ -127,21 +147,41 @@
 
         <!-- 3. Formação Acadêmica -->
         <section id="formacao" class="bloco-conteudo">
-          <h2>Formação Acadêmica</h2>
-          <p><b>Instituição:</b> IFSULDEMINAS - Campus Machado</p>
-          <p><b>Curso:</b> Bacharelado em Sistemas de informmação.</p>
-          <p><b>Período:</b> 2025 - 2028 (Previsão de Término)</p>
+          <h2 data-i18n="titulo-formacao">Formação Acadêmica</h2>
           <p>
-            <b>Disciplinas Relevantes:</b> Algoritmos e Estrutura de Dados,
-            Engenharia de Software, Tecnologias Web I.
+            <b data-i18n="label-instituicao">Instituição:</b> IFSULDEMINAS -
+            Campus Machado
+          </p>
+          <p>
+            <b data-i18n="label-curso">Curso:</b>
+            <span data-i18n="val-curso"
+              >Bacharelado em Sistemas de Informação.</span
+            >
+          </p>
+          <p>
+            <b data-i18n="label-periodo">Período:</b>
+            <span data-i18n="val-periodo"
+              >2025 - 2028 (Previsão de Término)</span
+            >
+          </p>
+          <p>
+            <b data-i18n="label-disciplinas">Disciplinas Relevantes:</b>
+            <span data-i18n="val-disciplinas"
+              >Algoritmos e Estrutura de Dados, Engenharia de Software,
+              Tecnologias Web I.</span
+            >
           </p>
         </section>
 
         <!-- 4. Experiência / Projetos -->
         <section id="experiencia" class="bloco-conteudo">
-          <h2>Projetos e Experiências</h2>
-          <p><b>Projeto: Currículo Web Interativo (2025)</b></p>
+          <h2 data-i18n="titulo-projetos">Projetos e Experiências</h2>
           <p>
+            <b data-i18n="proj-titulo"
+              >Projeto: Currículo Web Interativo (2025)</b
+            >
+          </p>
+          <p data-i18n="proj-desc">
             Desenvolvimento de página web responsiva em HTML5, CSS3 Grid e JS
             para a disciplina de Web I, contemplando alternância de temas e
             manipulação dinâmica do DOM.
@@ -150,49 +190,65 @@
 
         <!-- 5. Habilidades Técnicas -->
         <section id="habilidades" class="bloco-conteudo">
-          <h2>Habilidades Técnicas</h2>
+          <h2 data-i18n="titulo-habilidades">Habilidades Técnicas</h2>
           <ul>
             <li>
-              <b>Linguagens:</b> HTML5, CSS3, JavaScript (Intermediário), C/C++
-              (Básico)
+              <b data-i18n="label-linguagens">Linguagens:</b>
+              <span data-i18n="val-linguagens"
+                >HTML5, CSS3, JavaScript (Intermediário), C/C++ (Básico)</span
+              >
             </li>
-            <li><b>Ferramentas & Versionamento:</b> Git, GitHub, VS Code</li>
             <li>
-              <b>Conceitos:</b> Layouts Responsivos (Grid/Flexbox), Manipulação
-              de DOM
+              <b data-i18n="label-ferramentas">Ferramentas & Versionamento:</b>
+              Git, GitHub, VS Code
+            </li>
+            <li>
+              <b data-i18n="label-conceitos">Conceitos:</b>
+              <span data-i18n="val-conceitos"
+                >Layouts Responsivos (Grid/Flexbox), Manipulação de DOM</span
+              >
             </li>
           </ul>
         </section>
 
-        <div class="bloco-conteudo">
-          <h2>Idiomas & Certificações</h2>
-          <p><b>Idiomas:</b> Português (Nativo) | Inglês (Técnico / Básico)</p>
+        <!-- 6. Outros -->
+        <section id="outros" class="bloco-conteudo">
+          <h2 data-i18n="titulo-idiomas">Idiomas & Certificações</h2>
+          <p>
+            <b data-i18n="label-idiomas">Idiomas:</b>
+            <span data-i18n="val-idiomas"
+              >Português (Nativo) | Inglês (Técnico / Básico)</span
+            >
+          </p>
           <br />
-          <p><b>Cursos Extras:</b></p>
+          <p><b data-i18n="label-cursos">Cursos Extras:</b></p>
           <ul>
             <li>
-              Carreira na era de Dados e IA
+              <span data-i18n="curso-1">Carreira na era de Dados e IA</span>
               <a
                 href="certificados/Carreira na era de Dados e IA.pdf"
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
+                data-i18n-title="tooltip-cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
             <li>
-              Como criar full-stack TypeScript AI apps
+              <span data-i18n="curso-2"
+                >Como criar full-stack TypeScript AI apps</span
+              >
               <a
                 href="certificados/Como criar full-stack TypeScript AI apps.pdf"
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
+                data-i18n-title="tooltip-cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
-
             <li>
               RED HAT
               <a
@@ -200,28 +256,29 @@
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
+                data-i18n-title="tooltip-cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
-
             <li>
-              Informática Básica
+              <span data-i18n="curso-4">Informática Básica</span>
               <a
                 href="certificados/Informática Básica.pdf"
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
+                data-i18n-title="tooltip-cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
           </ul>
-        </div>
+        </section>
 
         <footer>
-          <p class="balao-rodape">
-            &copy; 2026 - Desenvolvido por Seu Nome Completo
+          <p class="balao-rodape" data-i18n="texto-rodape">
+            &copy; 2026 - Desenvolvido por Pablo Ruan Oliveira Chagas
           </p>
         </footer>
       </main>

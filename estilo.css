@@ -16,17 +16,17 @@ html {
 /* CONTAINER PRINCIPAL: Divide em 2 Colunas */
 .container-principal {
   display: grid;
-  grid-template-columns: 320px 1fr; /* Coluna esquerda fixa (320px) e Direita ocupa o resto (1fr) */
-  min-height: 100vh; /* 100% da altura da tela */
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
 }
 
 /* --- ESTILOS DA COLUNA ESQUERDA --- */
 .coluna-esquerda {
-  background-color: #1e293b; /* Tom escuro elegante */
+  background-color: #1e293b;
   color: white;
   padding: 30px 20px;
   text-align: center;
-  position: relative; /* Mantém elementos internos organizados */
+  position: relative;
 }
 
 /* Sua Foto com o clippath */
@@ -66,7 +66,7 @@ html {
 .secao-contato h2,
 .secao-sobre h2 {
   font-size: 1.1rem;
-  color: #38bdf8; /* Azul claro para destaque */
+  color: #38bdf8;
   margin-bottom: 10px;
 }
 
@@ -156,7 +156,7 @@ footer {
   color: #e1306c;
 }
 
-/* Botão do Tema (Posicionado sem flutuar sobre o texto) */
+/* Botão do Tema */
 .btn-tema {
   position: absolute;
   top: 15px;
@@ -166,6 +166,22 @@ footer {
   padding: 8px 10px;
   border-radius: 50%;
   border: 1px solid #38bdf8;
+}
+
+/* Botão do Idioma */
+.btn-idioma {
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  z-index: 1001;
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #38bdf8;
+  font-size: 0.85rem;
+  font-weight: bold;
+  gap: 6px;
 }
 
 /* Botão Baixar PDF */
@@ -198,7 +214,6 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Garante alinhamento dos ícones flutuantes */
 .btn-interativo {
   margin-left: 4px;
 }
@@ -253,7 +268,8 @@ body.modo-claro .balao-rodape {
   border: 1.5px solid #0284c7;
 }
 
-body.modo-claro .btn-tema {
+body.modo-claro .btn-tema,
+body.modo-claro .btn-idioma {
   background-color: #e2e8f0;
   color: #0284c7;
   border-color: #0284c7;
@@ -312,15 +328,13 @@ body:not(.modo-claro) .btn-pdf {
   color: #0a66c2;
 }
 
-/* --- ADAPTAÇÃO PARA CELULARES (MOBILE COMPLETO E CENTRALIZADO) --- */
+/* --- ADAPTAÇÃO PARA CELULARES --- */
 @media (max-width: 768px) {
-  /* Transforma as 2 colunas em 1 coluna única na vertical */
   .container-principal {
     grid-template-columns: 1fr;
     width: 100%;
   }
 
-  /* Coluna Superior (Dados Pessoais e Foto) */
   .coluna-esquerda {
     width: 100%;
     padding: 30px 20px;
@@ -329,21 +343,25 @@ body:not(.modo-claro) .btn-pdf {
 
   .secao-contato,
   .secao-sobre {
-    text-align: center; /* Centraliza os textos de contato */
+    text-align: center;
   }
 
   .secao-contato p {
-    justify-content: center; /* Alinha os ícones e links no meio */
+    justify-content: center;
   }
 
-  /* Reposiciona o botão do tema para não cobrir nada no mobile */
   .btn-tema {
     position: absolute;
     top: 15px;
     right: 15px;
   }
 
-  /* Coluna Inferior (Conteúdo do Currículo) */
+  .btn-idioma {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+  }
+
   .coluna-direita {
     padding: 25px 20px;
   }
@@ -355,18 +373,16 @@ body:not(.modo-claro) .btn-pdf {
 
   .btn-pdf {
     display: inline-block;
-    width: 100%; /* Botão em largura total para facilitar o clique no celular */
+    width: 100%;
     text-align: center;
   }
 
-  /* Menu de navegação ajustado para telas menores */
   .menu-navegacao {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
   }
 
-  /* Centraliza o balão do rodapé no mobile */
   footer {
     position: static;
     left: auto;
