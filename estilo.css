@@ -81,10 +81,10 @@ html {
 .coluna-direita {
   background-color: #ffffff;
   padding: 40px;
-  position: relative; /* CRUCIAL: Faz os botões se posicionarem no canto da coluna direita */
+  position: relative;
 }
 
-/* --- CONTROLES DO TOPO (ALINHAMENTO HORIZONTAL NO CANTO SUPERIOR DIREITO DO MAIN) --- */
+/* --- CONTROLES DO TOPO (DESKTOP) --- */
 .controles-topo {
   position: absolute;
   top: 25px;
@@ -98,7 +98,7 @@ html {
 
 .btn-tema,
 .btn-idioma {
-  position: static !important; /* Anula posicionamentos absolutos antigos */
+  position: static !important;
   margin: 0 !important;
   padding: 0 !important;
   width: 42px;
@@ -332,7 +332,7 @@ body:not(.modo-claro) .btn-pdf {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #334155;
-  padding-right: 110px; /* Garante que o menu não fique embaixo dos botões */
+  padding-right: 110px;
 }
 
 .menu-navegacao a {
@@ -372,10 +372,13 @@ body:not(.modo-claro) .btn-pdf {
     justify-content: center;
   }
 
+  /* BOTÕES CENTRALIZADOS E EM LINHA PRÓPRIA NO MOBILE */
   .controles-topo {
-    top: 15px;
-    right: 15px;
-    gap: 10px;
+    position: static !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 
   .coluna-direita {
@@ -397,7 +400,7 @@ body:not(.modo-claro) .btn-pdf {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    padding-right: 0;
+    padding-right: 0 !important;
   }
 
   footer {
