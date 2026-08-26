@@ -12,20 +12,6 @@
     />
   </head>
   <body>
-    <!-- Botão de Alternar Idioma -->
-    <button
-      id="btn-idioma"
-      class="btn-acao btn-idioma"
-      title="Mudar para Inglês"
-    >
-      <i class="fa-solid fa-globe"></i> <span id="label-idioma">EN</span>
-    </button>
-
-    <!-- Botão de Alternar Tema -->
-    <button id="btn-tema" class="btn-acao btn-tema" title="Alternar Tema">
-      <i class="fa-solid fa-moon"></i>
-    </button>
-
     <div class="container-principal">
       <!-- COLUNA ESQUERDA (ASIDE) -->
       <aside class="coluna-esquerda">
@@ -41,27 +27,24 @@
         </p>
 
         <div class="secao-contato">
-          <h2 data-i18n="titulo-contato">Contato</h2>
+          <h2 data-i18n="contato_titulo">Contato</h2>
           <p>
-            <b data-i18n="label-email">Email:</b>
+            <b>Email:</b>
             <span id="email-texto">pablo.ruan.oliveira.c@gmail.com</span>
             <button
               id="btn-copiar"
               class="btn-interativo"
               title="Copiar E-mail"
-              data-i18n-title="tooltip-copiar"
+              data-i18n-title="btn_copiar_title"
             >
               <i class="fa-regular fa-copy"></i>
             </button>
-            <span
-              id="aviso-copiado"
-              class="aviso-oculto"
-              data-i18n="aviso-copiado"
+            <span id="aviso-copiado" class="aviso-oculto" data-i18n="copiado"
               >Copiado!</span
             >
           </p>
           <p>
-            <b data-i18n="label-telefone">Telefone:</b> (35) 91001-7885
+            <b data-i18n="lbl_telefone">Telefone:</b> (35) 91001-7885
             <a
               href="https://wa.me/5535910017885"
               target="_blank"
@@ -90,7 +73,6 @@
               ><i class="fa-brands fa-github"></i
             ></a>
           </p>
-
           <p>
             <b>LinkedIn: </b>Pablo Ruan
             <a
@@ -103,14 +85,14 @@
             </a>
           </p>
           <p>
-            <b data-i18n="label-cidade">Cidade:</b>
-            <span data-i18n="val-cidade">Machado - MG</span>
+            <b data-i18n="lbl_cidade">Cidade:</b>
+            <span data-i18n="cidade">Machado - MG</span>
           </p>
         </div>
 
         <div class="secao-sobre">
-          <h2 data-i18n="titulo-sobre">Sobre Mim</h2>
-          <p data-i18n="texto-sobre">
+          <h2 data-i18n="sobre_titulo">Sobre Mim</h2>
+          <p data-i18n="sobre_texto">
             Estudante de graduação no IFSULDEMINAS - Campus Machado. Focado em
             desenvolvimento web Front-End e evolução constante em programação.
           </p>
@@ -119,26 +101,40 @@
 
       <!-- COLUNA DIREITA (MAIN) -->
       <main class="coluna-direita">
+        <!-- BOTÕES DO TOPO (LOCALIZADOS NA COLUNA DIREITA) -->
+        <div class="controles-topo">
+          <button
+            id="btn-idioma"
+            class="btn-idioma"
+            title="Mudar Idioma / Switch Language"
+          >
+            EN
+          </button>
+          <button id="btn-tema" class="btn-tema" title="Alternar Tema">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+
         <!-- MENU DE NAVEGAÇÃO -->
         <nav class="menu-navegacao">
-          <a href="#objetivo" data-i18n="menu-objetivo">Objetivo</a>
-          <a href="#formacao" data-i18n="menu-formacao">Formação</a>
-          <a href="#experiencia" data-i18n="menu-projetos">Projetos</a>
-          <a href="#habilidades" data-i18n="menu-habilidades">Habilidades</a>
-          <a href="#outros" data-i18n="menu-outros">Outros</a>
+          <a href="#objetivo" data-i18n="menu_objetivo">Objetivo</a>
+          <a href="#formacao" data-i18n="menu_formacao">Formação</a>
+          <a href="#experiencia" data-i18n="menu_projetos">Projetos</a>
+          <a href="#habilidades" data-i18n="menu_habilidades">Habilidades</a>
+          <a href="#outros" data-i18n="menu_outros">Outros</a>
         </nav>
 
         <div class="topo-direita">
           <button onclick="window.print()" class="btn-acao btn-pdf">
             <i class="fa-solid fa-file-pdf"></i>
-            <span data-i18n="btn-pdf">Baixar PDF</span>
+            <span data-i18n="btn_pdf">Baixar PDF</span>
           </button>
         </div>
 
         <!-- 2. Objetivo -->
         <section id="objetivo" class="bloco-conteudo">
-          <h2 data-i18n="titulo-objetivo">Objetivo Profissional</h2>
-          <p data-i18n="texto-objetivo">
+          <h2 data-i18n="obj_titulo">Objetivo Profissional</h2>
+          <p data-i18n="obj_texto">
             Estudante no 4º período com foco em desenvolvimento Web e Engenharia
             de Software. Busco oportunidades de estágio para aplicar
             conhecimentos em projetos práticos e evoluir na área de tecnologia.
@@ -147,26 +143,24 @@
 
         <!-- 3. Formação Acadêmica -->
         <section id="formacao" class="bloco-conteudo">
-          <h2 data-i18n="titulo-formacao">Formação Acadêmica</h2>
+          <h2 data-i18n="form_titulo">Formação Acadêmica</h2>
           <p>
-            <b data-i18n="label-instituicao">Instituição:</b> IFSULDEMINAS -
+            <b data-i18n="lbl_instituicao">Instituição:</b> IFSULDEMINAS -
             Campus Machado
           </p>
           <p>
-            <b data-i18n="label-curso">Curso:</b>
-            <span data-i18n="val-curso"
-              >Bacharelado em Sistemas de Informação.</span
-            >
+            <b data-i18n="lbl_curso">Curso:</b>
+            <span data-i18n="curso">Bacharelado em Sistemas de Informação</span>
           </p>
           <p>
-            <b data-i18n="label-periodo">Período:</b>
-            <span data-i18n="val-periodo"
+            <b data-i18n="lbl_periodo">Período:</b>
+            <span data-i18n="periodo_tempo"
               >2025 - 2028 (Previsão de Término)</span
             >
           </p>
           <p>
-            <b data-i18n="label-disciplinas">Disciplinas Relevantes:</b>
-            <span data-i18n="val-disciplinas"
+            <b data-i18n="lbl_disciplinas">Disciplinas Relevantes:</b>
+            <span data-i18n="disciplinas"
               >Algoritmos e Estrutura de Dados, Engenharia de Software,
               Tecnologias Web I.</span
             >
@@ -175,13 +169,13 @@
 
         <!-- 4. Experiência / Projetos -->
         <section id="experiencia" class="bloco-conteudo">
-          <h2 data-i18n="titulo-projetos">Projetos e Experiências</h2>
+          <h2 data-i18n="proj_titulo">Projetos e Experiências</h2>
           <p>
-            <b data-i18n="proj-titulo"
+            <b data-i18n="proj_1_nome"
               >Projeto: Currículo Web Interativo (2025)</b
             >
           </p>
-          <p data-i18n="proj-desc">
+          <p data-i18n="proj_1_desc">
             Desenvolvimento de página web responsiva em HTML5, CSS3 Grid e JS
             para a disciplina de Web I, contemplando alternância de temas e
             manipulação dinâmica do DOM.
@@ -190,53 +184,53 @@
 
         <!-- 5. Habilidades Técnicas -->
         <section id="habilidades" class="bloco-conteudo">
-          <h2 data-i18n="titulo-habilidades">Habilidades Técnicas</h2>
+          <h2 data-i18n="hab_titulo">Habilidades Técnicas</h2>
           <ul>
             <li>
-              <b data-i18n="label-linguagens">Linguagens:</b>
-              <span data-i18n="val-linguagens"
+              <b data-i18n="lbl_linguagens">Linguagens:</b>
+              <span data-i18n="hab_linguagens"
                 >HTML5, CSS3, JavaScript (Intermediário), C/C++ (Básico)</span
               >
             </li>
             <li>
-              <b data-i18n="label-ferramentas">Ferramentas & Versionamento:</b>
+              <b data-i18n="lbl_ferramentas">Ferramentas & Versionamento:</b>
               Git, GitHub, VS Code
             </li>
             <li>
-              <b data-i18n="label-conceitos">Conceitos:</b>
-              <span data-i18n="val-conceitos"
+              <b data-i18n="lbl_conceitos">Conceitos:</b>
+              <span data-i18n="hab_conceitos"
                 >Layouts Responsivos (Grid/Flexbox), Manipulação de DOM</span
               >
             </li>
           </ul>
         </section>
 
-        <!-- 6. Outros -->
+        <!-- 6. Idiomas & Certificações -->
         <section id="outros" class="bloco-conteudo">
-          <h2 data-i18n="titulo-idiomas">Idiomas & Certificações</h2>
+          <h2 data-i18n="cert_titulo">Idiomas & Certificações</h2>
           <p>
-            <b data-i18n="label-idiomas">Idiomas:</b>
-            <span data-i18n="val-idiomas"
+            <b data-i18n="lbl_idiomas">Idiomas:</b>
+            <span data-i18n="idiomas_texto"
               >Português (Nativo) | Inglês (Técnico / Básico)</span
             >
           </p>
           <br />
-          <p><b data-i18n="label-cursos">Cursos Extras:</b></p>
+          <p><b data-i18n="lbl_cursos_extras">Cursos Extras:</b></p>
           <ul>
             <li>
-              <span data-i18n="curso-1">Carreira na era de Dados e IA</span>
+              <span data-i18n="curso_1">Carreira na era de Dados e IA</span>
               <a
                 href="certificados/Carreira na era de Dados e IA.pdf"
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
-                data-i18n-title="tooltip-cert"
+                data-i18n-title="ver_cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
             <li>
-              <span data-i18n="curso-2"
+              <span data-i18n="curso_2"
                 >Como criar full-stack TypeScript AI apps</span
               >
               <a
@@ -244,7 +238,7 @@
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
-                data-i18n-title="tooltip-cert"
+                data-i18n-title="ver_cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
@@ -256,19 +250,19 @@
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
-                data-i18n-title="tooltip-cert"
+                data-i18n-title="ver_cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
             </li>
             <li>
-              <span data-i18n="curso-4">Informática Básica</span>
+              <span data-i18n="curso_4">Informática Básica</span>
               <a
                 href="certificados/Informática Básica.pdf"
                 target="_blank"
                 class="btn-interativo"
                 title="Ver Certificado"
-                data-i18n-title="tooltip-cert"
+                data-i18n-title="ver_cert"
               >
                 <i class="fa-solid fa-certificate"></i>
               </a>
@@ -277,7 +271,7 @@
         </section>
 
         <footer>
-          <p class="balao-rodape" data-i18n="texto-rodape">
+          <p class="balao-rodape" data-i18n="rodape">
             &copy; 2026 - Desenvolvido por Pablo Ruan Oliveira Chagas
           </p>
         </footer>

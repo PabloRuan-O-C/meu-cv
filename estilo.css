@@ -77,10 +77,61 @@ html {
   line-height: 1.4;
 }
 
-/* --- ESTILOS DA COLUNA DIREITA --- */
+/* --- ESTILOS DA COLUNA DIREITA (MAIN) --- */
 .coluna-direita {
   background-color: #ffffff;
   padding: 40px;
+  position: relative; /* CRUCIAL: Faz os botões se posicionarem no canto da coluna direita */
+}
+
+/* --- CONTROLES DO TOPO (ALINHAMENTO HORIZONTAL NO CANTO SUPERIOR DIREITO DO MAIN) --- */
+.controles-topo {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  z-index: 1001;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px;
+}
+
+.btn-tema,
+.btn-idioma {
+  position: static !important; /* Anula posicionamentos absolutos antigos */
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  color: #38bdf8;
+  border: 1.5px solid #38bdf8;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-tema i,
+.btn-idioma i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.btn-tema:hover,
+.btn-idioma:hover {
+  transform: scale(1.1);
 }
 
 .bloco-conteudo {
@@ -105,7 +156,7 @@ html {
   margin-left: 20px;
 }
 
-/* --- RODAPÉ FIXO NO CENTRO DA TELA E JUNTO À BORDA INFERIOR --- */
+/* --- RODAPÉ --- */
 footer {
   position: relative;
   bottom: 2px;
@@ -114,7 +165,6 @@ footer {
   z-index: 1000;
 }
 
-/* O "Cilindro Deitado" (Balão) */
 .balao-rodape {
   display: inline-block;
   background-color: #1e293b;
@@ -126,7 +176,7 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* --- BOTÕES E HOVER (EFEITO AUMENTAR) --- */
+/* --- BOTÕES E HOVER GENERALIZADOS --- */
 .btn-interativo,
 .btn-acao {
   display: inline-flex;
@@ -146,7 +196,7 @@ footer {
 
 .btn-interativo:hover,
 .btn-acao:hover {
-  transform: scale(1.25);
+  transform: scale(1.2);
 }
 
 .btn-whats {
@@ -155,40 +205,17 @@ footer {
 .btn-insta {
   color: #e1306c;
 }
-
-/* Botão do Tema */
-.btn-tema {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1001;
-  background-color: #1e293b;
-  padding: 8px 10px;
-  border-radius: 50%;
-  border: 1px solid #38bdf8;
-}
-
-/* Botão do Idioma */
-.btn-idioma {
-  position: absolute;
-  top: 15px;
-  right: 60px;
-  z-index: 1001;
-  background-color: #1e293b;
-  color: #38bdf8;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #38bdf8;
-  font-size: 0.85rem;
-  font-weight: bold;
-  gap: 6px;
+.btn-linkedin {
+  color: #0a66c2;
 }
 
 /* Botão Baixar PDF */
 .topo-direita {
   text-align: right;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
+
 .btn-pdf {
   background-color: #0f172a;
   color: #fff;
@@ -198,7 +225,7 @@ footer {
   gap: 8px;
 }
 
-/* Aviso "Copiado!" */
+/* Aviso Copiado */
 .aviso-oculto {
   display: none;
   font-size: 0.75rem;
@@ -206,7 +233,6 @@ footer {
   margin-left: 5px;
 }
 
-/* --- REGRA PADRÃO PARA ALINHAR TEXTOS DE CONTATO --- */
 .secao-contato p {
   display: flex;
   align-items: center;
@@ -218,8 +244,7 @@ footer {
   margin-left: 4px;
 }
 
-/* --- SUPORTE COMPLETO AO MODO CLARO E MODO ESCURO --- */
-
+/* --- MODO CLARO --- */
 body.modo-claro {
   background-color: #f4f6f9;
 }
@@ -275,7 +300,7 @@ body.modo-claro .btn-idioma {
   border-color: #0284c7;
 }
 
-/* MODO ESCURO REAL */
+/* --- MODO ESCURO --- */
 body:not(.modo-claro) {
   background-color: #0f172a;
 }
@@ -307,6 +332,7 @@ body:not(.modo-claro) .btn-pdf {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #334155;
+  padding-right: 110px; /* Garante que o menu não fique embaixo dos botões */
 }
 
 .menu-navegacao a {
@@ -324,11 +350,7 @@ body:not(.modo-claro) .btn-pdf {
   color: #2563eb;
 }
 
-.btn-linkedin {
-  color: #0a66c2;
-}
-
-/* --- ADAPTAÇÃO PARA CELULARES --- */
+/* --- ADAPTAÇÃO MOBILE --- */
 @media (max-width: 768px) {
   .container-principal {
     grid-template-columns: 1fr;
@@ -350,16 +372,10 @@ body:not(.modo-claro) .btn-pdf {
     justify-content: center;
   }
 
-  .btn-tema {
-    position: absolute;
+  .controles-topo {
     top: 15px;
     right: 15px;
-  }
-
-  .btn-idioma {
-    position: absolute;
-    top: 15px;
-    right: 60px;
+    gap: 10px;
   }
 
   .coluna-direita {
@@ -381,6 +397,7 @@ body:not(.modo-claro) .btn-pdf {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+    padding-right: 0;
   }
 
   footer {
